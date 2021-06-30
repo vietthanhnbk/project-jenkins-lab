@@ -1,17 +1,21 @@
-pipeline{
-  agent none
-  options{
-        skipDefaultCheckout()
-  }
-  stages{
-    stage('BUILD' ){
-      agent any
-      options{
-        skipDefaultCheckout()
-      }
-      steps{
-        echo 'hello world 2'
-      }
+pipeline {
+    agent any
+    stages {
+        stage('Build Master') {
+            when {
+                branch 'master'
+            }
+            steps {
+                echo 'Building master'
+            }
+        }
+        stage('Build Dev') {
+            when {
+                branch 'dev'
+            }
+            steps {
+                echo 'Building dev'
+            }
+        }
     }
-  }
 }
