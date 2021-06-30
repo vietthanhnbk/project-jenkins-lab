@@ -1,20 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage('Build Main') {
+        stage('Build issue1') {
             when {
-                branch 'main'
+                branch 'issue1'
             }
             steps {
-                echo 'Building main'
-            }
-        }
-        stage('Build Dev') {
-            when {
-                branch 'dev'
-            }
-            steps {
-                echo 'Building dev'
+                echo 'Building issue1'
             }
         }
     }
