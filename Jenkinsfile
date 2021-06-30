@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build Main') {
             when {
-                 changeset : "*.js"
+                 changeset "*.js"
             }
             steps {
                 echo 'Hello World changing JS'
