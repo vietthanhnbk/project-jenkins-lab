@@ -3,10 +3,10 @@ pipeline {
     stages {
         stage('Build Main') {
             when {
-                 changeRequest()
+                 changeset glob: ".js"
             }
             steps {
-                echo 'Hello World changing request'
+                echo 'Hello World changing JS'
             }
         }
     }
